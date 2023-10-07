@@ -52,7 +52,7 @@ class _EmailDetailedViewState extends State<EmailDetailedView> {
                   initialFile: widget.htmlFile,
                   initialOptions: InAppWebViewGroupOptions(
                     crossPlatform: InAppWebViewOptions(
-                      supportZoom: false,
+                      supportZoom: true,
                       javaScriptEnabled: true,
                       useShouldOverrideUrlLoading: true,
                       clearCache: false,
