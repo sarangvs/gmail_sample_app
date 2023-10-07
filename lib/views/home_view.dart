@@ -64,72 +64,74 @@ class _HomeViewState extends State<HomeView> {
                 padding: EdgeInsets.only(left: 16, top: 20),
                 child: Text("ALL INBOXES"),
               ),
-              ListView.separated(
-                shrinkWrap: true,
-                itemCount: homeViewController.mailListJson.length,
-                padding: const EdgeInsets.all(16),
-                itemBuilder: (context, index) {
-                  final model = homeViewController.mailListJson[index];
-                  return Bounceable(
-                    onTap: () {
-                      Get.to(
-                        () => EmailDetailedView(
-                          model: model,
-                          htmlFile: model["url"].toString(),
-                        ),
-                        transition: Transition.cupertino,
-                      );
-                    },
-                    child: SizedBox(
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundColor: homeViewController.colorList[
-                                index % homeViewController.colorList.length],
-                            child: Text(
-                              model["title"]![0].toString(),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
+              Expanded(
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  itemCount: homeViewController.mailListJson.length,
+                  padding: const EdgeInsets.all(16),
+                  itemBuilder: (context, index) {
+                    final model = homeViewController.mailListJson[index];
+                    return Bounceable(
+                      onTap: () {
+                        Get.to(
+                          () => EmailDetailedView(
+                            model: model,
+                            htmlFile: model["url"].toString(),
                           ),
-                          const SizedBox(width: 20),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                model["title"].toString(),
+                          transition: Transition.cupertino,
+                        );
+                      },
+                      child: SizedBox(
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              backgroundColor: homeViewController.colorList[
+                                  index % homeViewController.colorList.length],
+                              child: Text(
+                                model["title"]![0].toString(),
                                 style: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                 ),
-                                overflow: TextOverflow.ellipsis,
                               ),
-                              SizedBox(
-                                width: Get.width / 1.5,
-                                child: Text(
-                                  model["sub_title"].toString(),
+                            ),
+                            const SizedBox(width: 20),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  model["title"].toString(),
                                   style: const TextStyle(
                                     color: Colors.black,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
-                              )
-                            ],
-                          )
-                        ],
+                                SizedBox(
+                                  width: Get.width / 1.5,
+                                  child: Text(
+                                    model["sub_title"].toString(),
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  );
-                },
-                separatorBuilder: (context, index) =>
-                    const SizedBox(height: 10),
+                    );
+                  },
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 10),
+                ),
               ),
             ],
           ),
