@@ -6,7 +6,7 @@ class HomeViewController extends GetxController {
     {
       "title": "Happilo",
       "sub_title": "Thank you for your purchase!",
-      "url": "assets/mailbody1.html"
+      "url": "assets/mailbody1.html",
     },
     {
       "title": "Hopscotch Care",

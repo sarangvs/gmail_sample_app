@@ -27,6 +27,7 @@ class _HomeViewState extends State<HomeView> {
                 toolbarHeight: 50,
                 backgroundColor: Colors.white,
                 pinned: false,
+                // snap: true,
                 centerTitle: false,
                 title: Container(
                   height: 52,
@@ -76,6 +77,7 @@ class _HomeViewState extends State<HomeView> {
                         Get.to(
                           () => EmailDetailedView(
                             model: model,
+                            index: index,
                             htmlFile: model["url"].toString(),
                           ),
                           transition: Transition.cupertino,

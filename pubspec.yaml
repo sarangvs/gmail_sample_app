@@ -37,8 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bounceable: ^1.1.0
   get: ^4.6.6
-  webview_flutter: ^3.0.4
   flutter_inappwebview: ^5.8.0
+  syncfusion_flutter_pdfviewer: ^23.1.39
+
   
 
 dev_dependencies:
@@ -68,6 +69,7 @@ flutter:
     - assets/mailbody1.html
     - assets/mailbody2.html
     - assets/mailbody3.html
+    - assets/random_pdf.pdf
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
