@@ -26,4 +26,16 @@ class HomeViewController extends GetxController {
     const Color(0xFF0EC4AE),
     const Color(0xFFC038D6)
   ];
+
+  removeDuplicates() {
+    List<int> intArray = [2, 4, 6, 2, 5];
+
+    for (var element1 in intArray) {
+      for (var element2 in intArray) {
+        if (element1 == element2) {
+          intArray.remove(element1);
+        }
+      }
+    }
+  }
 }

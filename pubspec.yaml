@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.6
   flutter_inappwebview: ^5.8.0
   syncfusion_flutter_pdfviewer: ^23.1.39
+  zoom_widget: ^2.0.1
 
   
 
